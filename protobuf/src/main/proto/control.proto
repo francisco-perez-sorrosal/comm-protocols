@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.codeg33ks.processing";
+option java_outer_classname = "ControlProto";
+
+// ------------------------------------------------ GRPC part ---------------------------------------------------------
+
+service TimeService {
+
+    // A simple RPC.
+    //
+    // Obtains the time from a server
+    rpc GetTime(TimeRequest) returns (TimeResponse) {}
+
+}
+
+// --------------------------------------------- End GRPC part --------------------------------------------------------
+
+// ------------------------------------------- Akka and GRPC part -----------------------------------------------------
+
+message TimeRequest {
+    int32 nodeLevel = 1;
+}
+
+message TimeResponse {
+    int64 time = 1;
+    string signature = 2;
+}
+
+// --------------------------------------------- End Akka part --------------------------------------------------------

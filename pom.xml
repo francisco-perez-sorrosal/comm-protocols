@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fps.rpc</groupId>
+    <artifactId>rpc</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>protobuf</module>
+        <module>client</module>
+        <module>front-server</module>
+        <module>back-server</module>
+        <module>common</module>
+    </modules>
+
+    <properties>
+
+        <!-- Basic properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Java Version -->
+        <java.version>1.8</java.version>
+
+        <!-- 3rd-Party Library Versioning -->
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <guava.version>19.0</guava.version>
+        <guice.version>3.0</guice.version>
+        <jcommander.version>1.35</jcommander.version>
+        <netty.version>4.1.1.Final</netty.version>
+        <protobuf.version>2.5.0</protobuf.version>
+        <testng.version>6.8.8</testng.version>
+        <mockito.version>1.9.5</mockito.version>
+
+        <!-- Maven Plugin Versioning -->
+        <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.5</maven-compiler-plugin.version>
+        <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
+        <maven-shade-plugin.version>2.3</maven-shade-plugin.version>
+        <maven-release-plugin.version>2.3.2</maven-release-plugin.version>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+        <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
+        <maven-surefire-report-plugin.version>2.19</maven-surefire-report-plugin.version>
+        <maven-coveralls-plugin.version>4.1.0</maven-coveralls-plugin.version>
+        <maven-cobertura-plugin.version>2.7</maven-cobertura-plugin.version>
+        <maven-license-plugin.version>2.11</maven-license-plugin.version>
+        <maven-site-plugin.version>3.5</maven-site-plugin.version>
+        <maven-pmd-plugin.version>3.4</maven-pmd-plugin.version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-findbugs-maven-plugin.version>3.0.1</maven-findbugs-maven-plugin.version>
+
+    </properties>
+
+    <build>
+
+        <pluginManagement>
+
+            <plugins>
+
+                <!-- ============================================================================================== -->
+                <!-- Basic plugins                                                                                  -->
+                <!-- ============================================================================================== -->
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <compilerArgs>
+                            <arg>-Werror</arg>
+                            <arg>-Xlint:deprecation</arg>
+                            <arg>-Xlint:unchecked</arg>
+                        </compilerArgs>
+
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
+
+</project>
