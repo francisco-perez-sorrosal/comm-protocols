@@ -87,7 +87,7 @@ public class NettyClient implements TimeChecker {
         @Override
         protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
 
-            LOG.info("Time checked asynchronously: ", msg);
+            LOG.info("Time checked asynchronously: {}", msg);
             ctx.close();
             asyncResponsesReceived.countDown();
 
